@@ -1,16 +1,13 @@
 import { Module } from '@nestjs/common';
-// import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DriverModule } from './driver/driver.module';
-import { DriverService } from './driver/driver.service';
+import { SolicitudMantenimientoModule } from './solicitud_mantenimiento/solicitud_mantenimiento.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    // MongooseModule.forRoot('mongodb://localhost:27017/vehicles'),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
@@ -21,7 +18,7 @@ import { DriverService } from './driver/driver.service';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    DriverModule,
+    SolicitudMantenimientoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
