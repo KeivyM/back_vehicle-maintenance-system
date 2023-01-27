@@ -5,7 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SolicitudMantenimientoModule } from './solicitud_mantenimiento/solicitud_mantenimiento.module';
 import { EmplModule } from './empl/empl.module';
-import { VehiModule } from './vehi/vehi.module';
+// import { VehiModule } from './vehi/vehi.module';
+import { EntitiesModule } from './entities/entities.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { VehiModule } from './vehi/vehi.module';
     }),
     SolicitudMantenimientoModule,
     EmplModule,
-    VehiModule,
+    // VehiModule,
+    EntitiesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
