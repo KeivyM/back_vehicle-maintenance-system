@@ -1,18 +1,30 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryColumn,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Empl } from '../../empl/entities/empl.entity';
 
 @Entity()
 export class SolicitudMantenimiento {
-  @PrimaryGeneratedColumn()
-  id: string;
-
+  // @PrimaryGeneratedColumn('increment')
+  // @Column()
+  @PrimaryColumn()
+  id_sol: string;
+  //
   // kilo_actual: string;
-  // kilo_prox: string;
+  // kilo_prox: string
 
-  @Column('text')
+  @Column('char')
   kilo_actual: string;
 
-  // @OneToOne(()=>Carro);
-  // id_carr:Carro
+  @OneToOne(() => Empl)
+  @JoinColumn()
+  id_empl: Empl;
+  //
 
   // @Column('numeric', { default: 0 })
   // numero:number

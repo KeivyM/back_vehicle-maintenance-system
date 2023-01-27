@@ -38,11 +38,17 @@ export class SolicitudMantenimientoService {
   }
 
   async findAll() {
-    return await this.solicitudMantenimientoRepository.find();
+    return await this.solicitudMantenimientoRepository.find({
+      relations: {
+        id_empl: true,
+      },
+    });
   }
 
   async findOne(id: string) {
-    return await this.solicitudMantenimientoRepository.findOneBy({ id });
+    return await this.solicitudMantenimientoRepository.findOneBy({
+      id_sol: id,
+    });
   }
 
   update(
