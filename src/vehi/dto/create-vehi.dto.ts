@@ -26,4 +26,8 @@ export class CreateVehiDto {
   @IsString()
   @MinLength(1)
   id_empl: string;
+
+  @IsString()
+  @MinLength(1)
+  id_mode: string;
 }

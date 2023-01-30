@@ -7,6 +7,7 @@ import { SolicitudMantenimientoModule } from './solicitud_mantenimiento/solicitu
 import { EmplModule } from './empl/empl.module';
 import { EntitiesModule } from './entities/entities.module';
 import { VehiModule } from './vehi/vehi.module';
+import { MarcModule } from './marc/marc.module';
 
 @Module({
   imports: [
@@ -23,8 +24,9 @@ import { VehiModule } from './vehi/vehi.module';
     }),
     SolicitudMantenimientoModule,
     EmplModule,
-    EntitiesModule,
+    // EntitiesModule,
     VehiModule,
+    MarcModule,
   ],
   controllers: [AppController],
   providers: [AppService],

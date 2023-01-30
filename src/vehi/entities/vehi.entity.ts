@@ -7,8 +7,8 @@ import {
   ManyToOne,
 } from 'typeorm';
 import { SolicitudMantenimiento } from '../../solicitud_mantenimiento/entities/solicitud_mantenimiento.entity';
-// import { Marc } from '../marc/marc.entity';
-import { Marc } from '../../entities/marc/marc.entity';
+import { Marc } from '../../marc/entities/marc.entity';
+import { Modelo } from 'src/entities/modelo/modelo.entity';
 
 @Entity()
 export class Vehi {
@@ -30,7 +30,7 @@ export class Vehi {
 
   @Column('char', { nullable: false, length: 1 })
   id_empl: string;
-
+  //
   @OneToMany(
     () => SolicitudMantenimiento,
     (SolicitudMantenimiento) => SolicitudMantenimiento,
@@ -38,9 +38,13 @@ export class Vehi {
   @JoinColumn()
   solicitudes: SolicitudMantenimiento;
 
-  @ManyToOne(() => Marc, (empl) => empl, { nullable: false })
+  @ManyToOne(() => Marc, (marc) => marc, { nullable: false })
   @JoinColumn()
   id_marc: Marc;
+
+  @ManyToOne(() => Modelo, (modelo) => modelo, { nullable: false })
+  @JoinColumn()
+  id_mode: Modelo;
 
   // @Column('tinyint', { nullable: false })
   // id_marc: number;.
