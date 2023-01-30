@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { SolicitudMantenimientoService } from './solicitud_mantenimiento.service';
 import { CreateSolicitudMantenimientoDto } from './dto/create-solicitud_mantenimiento.dto';
-import { UpdateSolicitudMantenimientoDto } from './dto/update-solicitud_mantenimiento.dto';
+// import { UpdateSolicitudMantenimientoDto } from './dto/update-solicitud_mantenimiento.dto';
 
 @Controller('solicitud-mantenimiento')
 export class SolicitudMantenimientoController {
@@ -36,19 +36,19 @@ export class SolicitudMantenimientoController {
     return this.solicitudMantenimientoService.findOne(id);
   }
 
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateSolicitudMantenimientoDto: UpdateSolicitudMantenimientoDto,
-  ) {
-    return this.solicitudMantenimientoService.update(
-      +id,
-      updateSolicitudMantenimientoDto,
-    );
-  }
+  // @Patch(':id')
+  // update(
+  //   @Param('id') id: string,
+  //   @Body() updateSolicitudMantenimientoDto: UpdateSolicitudMantenimientoDto,
+  // ) {
+  //   return this.solicitudMantenimientoService.update(
+  //     +id,
+  //     updateSolicitudMantenimientoDto,
+  //   );
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.solicitudMantenimientoService.remove(id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.solicitudMantenimientoService.remove(id);
+  // }
 }

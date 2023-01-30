@@ -21,7 +21,7 @@ export class Empl {
   @Column('char', { length: 12 })
   tele_empl: string;
 
-  @Column('tinyint') //
+  @Column('tinyint')
   stat_empl: number;
 
   @OneToMany(

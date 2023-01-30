@@ -5,8 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SolicitudMantenimientoModule } from './solicitud_mantenimiento/solicitud_mantenimiento.module';
 import { EmplModule } from './empl/empl.module';
-// import { VehiModule } from './vehi/vehi.module';
 import { EntitiesModule } from './entities/entities.module';
+import { VehiModule } from './vehi/vehi.module';
 
 @Module({
   imports: [
@@ -23,11 +23,10 @@ import { EntitiesModule } from './entities/entities.module';
     }),
     SolicitudMantenimientoModule,
     EmplModule,
-    // VehiModule,
     EntitiesModule,
+    VehiModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-//

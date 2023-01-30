@@ -41,6 +41,7 @@ export class SolicitudMantenimientoService {
     return await this.solicitudMantenimientoRepository.find({
       relations: {
         id_empl: true,
+        id_carr: true,
       },
     });
   }
@@ -51,15 +52,15 @@ export class SolicitudMantenimientoService {
     });
   }
 
-  update(
-    id: number,
-    updateSolicitudMantenimientoDto: UpdateSolicitudMantenimientoDto,
-  ) {
-    return `This action updates a #${id} solicitudMantenimiento`;
-  }
+  // update(
+  //   id: number,
+  //   updateSolicitudMantenimientoDto: UpdateSolicitudMantenimientoDto,
+  // ) {
+  //   return `This action updates a #${id} solicitudMantenimiento`;
+  // }
 
-  async remove(id: string) {
-    const solicitud = await this.findOne(id);
-    await this.solicitudMantenimientoRepository.remove(solicitud);
-  }
+  // async remove(id: string) {
+  //   const solicitud = await this.findOne(id);
+  //   await this.solicitudMantenimientoRepository.remove(solicitud);
+  // }
 }

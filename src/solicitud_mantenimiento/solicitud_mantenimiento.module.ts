@@ -4,9 +4,10 @@ import { SolicitudMantenimientoController } from './solicitud_mantenimiento.cont
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SolicitudMantenimiento } from './entities/solicitud_mantenimiento.entity';
 import { Empl } from '../empl/entities/empl.entity';
+import { Vehi } from '../vehi/entities/vehi.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([SolicitudMantenimiento, Empl])],
+  imports: [TypeOrmModule.forFeature([SolicitudMantenimiento, Empl, Vehi])],
   controllers: [SolicitudMantenimientoController],
   providers: [SolicitudMantenimientoService],
 })
